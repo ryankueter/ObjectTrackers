@@ -74,7 +74,7 @@ public class TrackList<T>
         }
 
         // Determines if any rows were added or removed.
-        if (RowsAdded().Any() || RowsRemoved().Any())
+        if (ItemsAdded().Any() || ItemsRemoved().Any())
             result = true;
 
         return result;
@@ -86,7 +86,7 @@ public class TrackList<T>
     /// <returns>
     /// Returns a List<string> that stores json representations of the objects.
     /// </returns>
-    public List<string> RowsRemovedJson()
+    public List<string> ItemsRemovedJson()
     {
         var result = new List<string>();
         var removed = _originalList.Except(_currentList).ToList();
@@ -104,7 +104,7 @@ public class TrackList<T>
     /// <returns>
     /// Returns a List<string> that stores json representations of the objects.
     /// </returns>
-    public List<string> RowsAddedJson()
+    public List<string> ItemsAddedJson()
     {
         var result = new List<string>();
         var added = _currentList.Except(_originalList).ToList();
@@ -122,7 +122,7 @@ public class TrackList<T>
     /// <returns>
     /// Returns a List<T> that stores the objects removed.
     /// </returns>
-    public List<T> RowsRemoved()
+    public List<T> ItemsRemoved()
     {
         var result = new List<T>();
         var removed = _originalList.Except(_currentList).ToList();
@@ -136,7 +136,7 @@ public class TrackList<T>
     /// <returns>
     /// Returns a List<T> that stores the objects added.
     /// </returns>
-    public List<T> RowsAdded()
+    public List<T> ItemsAdded()
     {
         var result = new List<T>();
         var added = _currentList.Except(_originalList).ToList();

@@ -157,34 +157,34 @@ if (personsListTracked.HasChanges())
         Console.WriteLine($"Id {c.Item.Id}");
 
         // Get the before and after values
-        Console.WriteLine(c.Before);
-        Console.WriteLine(c.After);
+        Console.WriteLine($"Before: {c.Before}");
+        Console.WriteLine($"After: {c.After}");
     }
 
     // Check for items added or removed.
     Console.WriteLine();
     Console.WriteLine("Actual rows added");
-    foreach (var c in personsListTracked.RowsAdded())
+    foreach (var c in personsListTracked.ItemsAdded())
     {
         Console.WriteLine($"{c.Id}, {c.FirstName}, {c.LastName}");
     }
     Console.WriteLine();
     Console.WriteLine("Json serialized rows added");
-    foreach (var c in personsListTracked.RowsAddedJson())
+    foreach (var c in personsListTracked.ItemsAddedJson())
     {
         Console.WriteLine($"{c}");
     }
 
     Console.WriteLine();
     Console.WriteLine("Actual rows removed");
-    foreach (var c in personsListTracked.RowsRemoved())
+    foreach (var c in personsListTracked.ItemsRemoved())
     {
         Console.WriteLine($"{c.Id}, {c.FirstName}, {c.LastName}");
     }
 
     Console.WriteLine();
     Console.WriteLine("Json serialized rows removed");
-    foreach (var c in personsListTracked.RowsRemovedJson())
+    foreach (var c in personsListTracked.ItemsRemovedJson())
     {
         Console.WriteLine($"{c}");
     }
@@ -193,7 +193,7 @@ if (personsListTracked.HasChanges())
 ###
 #### Output:
 
-In the first part of this example, we retrieve only the changes made to the tracked objects. Since we removed the first user, it's no longer being tracked and is not listed among the tracked changes. To track rows that were added or removed, Object Tracker provides the RowsAdded() and RowsRemoved() methods.
+In the first part of this example, we retrieve only the changes made to the tracked objects. Since we removed the first user, it's no longer being tracked and is not listed among the tracked changes. To track rows that were added or removed, Object Tracker provides the ItemsAdded() and ItemsRemoved() methods.
 
 ```console
 Id 3

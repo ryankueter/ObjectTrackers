@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.13</Version>
+		<Version>1.0.14</Version>
 		<Authors>Ryan A. Kueter</Authors>
 		<Company>Ryan A. Kueter</Company>
 		<Description>A free .NET library that provides a simple way to track changes made to an object, like a class or list of classes. It allows you to capture those changes as “before” and “after” json serialized dictionary arrays that contain the property names and their values for quickly and easily storing and retrieving your audit data.</Description>
@@ -13,10 +13,10 @@
 		<PackageIcon>Icon.jpg</PackageIcon>
 		<PackageIconUrl />
 		<RepositoryUrl>https://github.com/ryankueter/ObjectTrackers</RepositoryUrl>
-		<PackageReleaseNotes>Initial release!</PackageReleaseNotes>
+		<PackageReleaseNotes>Small change immediately after initial release: Changed the names for RowsAdded() and RowsRemoved() to ItemsAdded() and ItemsRemoved() to make them more consistent. Currently this change should not effect any users since this change comes minutes after the initial release.</PackageReleaseNotes>
 		<PackageTags>C#;Track;Tracking;Changes;Auditing</PackageTags>
-		<AssemblyVersion>1.0.13</AssemblyVersion>
-		<FileVersion>1.0.13</FileVersion>
+		<AssemblyVersion>1.0.14</AssemblyVersion>
+		<FileVersion>1.0.14</FileVersion>
 		<Copyright>Ryan A. Kueter</Copyright>
 		<PackageProjectUrl>https://github.com/ryankueter/ObjectTrackers</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
