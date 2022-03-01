@@ -13,7 +13,7 @@
 		<PackageIcon>Icon.jpg</PackageIcon>
 		<PackageIconUrl />
 		<RepositoryUrl>https://github.com/ryankueter/ObjectTrackers</RepositoryUrl>
-		<PackageReleaseNotes>Small change immediately after initial release: Changed the names for RowsAdded() and RowsRemoved() to ItemsAdded() and ItemsRemoved() to make them more consistent. Currently this change should not effect any users since this change comes minutes after the initial release.</PackageReleaseNotes>
+		<PackageReleaseNotes>Small change immediately after initial release: Changed the method names RowsAdded() and RowsRemoved() to ItemsAdded() and ItemsRemoved() to make them more consistent. Currently this change should not effect any users since this change comes minutes after the initial release.</PackageReleaseNotes>
 		<PackageTags>C#;Track;Tracking;Changes;Auditing</PackageTags>
 		<AssemblyVersion>1.0.14</AssemblyVersion>
 		<FileVersion>1.0.14</FileVersion>
