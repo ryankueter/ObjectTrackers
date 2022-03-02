@@ -9,15 +9,14 @@ Updated: March, 2022
 
 ### Targets:
 - .NET 6
-
-   
-
+- .NET 5
 
 ## Why Client-Side Auditing is Better Engineering
 
 **Object Tackers** was originally written to provide functionality for client-side auditing scenarios. By moving the user auditing logic to the client, you can dramatically improve the readability and maintainability of your code while improving the response-time and performance of your backend services and DBMSs. Backend data structures are typically very different from those consumed by the client. Consequently, you capture a lot of useless and irrelevant data, and substantially add to processor consumption, especially if you are using interceptors or database triggers. If you are creating your own custom functions in the service or the DBMS, then you need to locate and track all of those functions, which can be difficult if they are in stored procedures. By moving all the user auditing to the client, you eliminate all of that excess confusion, excess data, and processor consumption, which improves the response time of the service or DBMS, and only captures the data your users care about in a format they understand.
 
-A simple example:
+In the following feature demonstration, notice how the HasChanges() method must be called to get the changes.
+
 ```csharp
 using ObjectTrackers;
 
@@ -240,7 +239,6 @@ person.Address.Street = "2nd Street";
 ```  
 ###
 #### Output:
-
 ```console
 Before Values:
 {"LastName":"Kueter"}
@@ -249,7 +247,64 @@ After Values:
 {"LastName":"Silly"}
 ```
 ###
+## Example Usage
 
+How the Object Tracker could be used in a view model.
+
+```csharp
+/// <summary>
+/// Usage example:
+/// </summary>
+public class ExampleViewModel
+{
+    /// <summary>
+    /// The tracker
+    /// </summary>
+    private Track<Person> _personTracked;
+    public Person SelectedPerson { get; set; }
+
+    /// <summary>
+    /// The GetPerson() method that fetches the data
+    /// </summary>
+    public void GetPerson()
+    {
+        // Get the data and track it
+        SelectedPerson = new Person() { Id = 1, FirstName = "Ryan", LastName = "Kueter" };
+        _personTracked = new Track<Person>(SelectedPerson);
+    }
+
+    /// <summary>
+    /// Fake save button
+    /// </summary>
+    public void SaveButton_Click()
+    {
+        // YOU MUST CALL HasChanges() to get the changes
+        if (!_personTracked.HasChanges()) { return; }
+
+        var audit = new ExampleAudit()
+        {
+            Id = _personTracked.Value.Id,
+            Module = "Console",
+            Before = _personTracked.Before,
+            After = _personTracked.After
+        };
+
+        // Do something with the data...
+    }
+
+    /// <summary>
+    /// Low effort example audit class
+    /// </summary>
+    public class ExampleAudit
+    { 
+        public int Id { get; set; }
+        public string Module { get; set; }
+        public string Before { get; set; }
+        public string After { get; set; }
+    }
+}
+```  
+###
 ## Contributions
 
 Object Tracker is being developed for free by me, Ryan Kueter, in my spare time. So, if you use this library and see a need for improvement, please send your ideas.
