@@ -9,7 +9,6 @@ Updated: March, 2022
 
 ### Targets:
 - .NET 6
-- .NET 5
 
 ## Why Client-Side Auditing is Better Engineering
 
@@ -50,19 +49,6 @@ if (trackedPerson.HasChanges())
     Console.WriteLine("After Values:");
     Console.WriteLine(afterJson);
 }
-
-// Deserializing the values:
-Console.WriteLine();
-var b = JsonSerializer.Deserialize<Dictionary<string, string>>(trackedPerson.After);
-foreach (var kv in b)
-{
-    Console.WriteLine($"{kv.Key}: {kv.Value}");
-    if (kv.Key == "Address")
-    {
-        var address = JsonSerializer.Deserialize<Address>(kv.Value);
-        Console.WriteLine(address.Street);
-    }
-}
 ```
 ###
 #### Output:
@@ -76,8 +62,22 @@ Before Values:
 After Values:
 {"LastName":"Silly","CreatedDate":"2/28/2022 1:19:53 PM"}
 ```
+###
+#### Deserializing the Values:
+```csharp
+var b = JsonSerializer.Deserialize<Dictionary<string, string>>(trackedPerson.After);
+foreach (var kv in b)
+{
+    Console.WriteLine($"{kv.Key}: {kv.Value}");
+    if (kv.Key == "Address")
+    {
+        var address = JsonSerializer.Deserialize<Address>(kv.Value);
+        Console.WriteLine(address.Street);
+    }
+}
+```
    
-For more complex (and less frequent) scenarios, where you have properties that are custom datatypes or lists, the value itself is stored as a json object. For example, in the previous example, we could also change the Address street from "1st Street" to "2nd Street" it would store the values like the following.
+When you have properties that are custom datatypes or arrays, the value itself is stored as a json object. For example, in the previous example, we could also change the Address street from "1st Street" to "2nd Street" it would store the values like the following.
 
 ```console
 Before Values:
