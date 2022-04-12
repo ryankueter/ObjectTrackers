@@ -134,12 +134,8 @@ namespace ObjectTrackers
             // serialize the before and after results
             if (hasChanges)
             {
-                var options = new JsonSerializerOptions()
-                {
-                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-                };
-                Before = JsonSerializer.Serialize(PreviousChangedValues, options);
-                After = JsonSerializer.Serialize(NewChangedValues, options);
+                Before = JsonSerializer.Serialize(PreviousChangedValues);
+                After = JsonSerializer.Serialize(NewChangedValues);
             }
             return hasChanges;
         }
