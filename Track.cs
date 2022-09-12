@@ -20,7 +20,7 @@ namespace ObjectTrackers
     /// <typeparam name="T">
     /// The datatype being tracked.
     /// </typeparam>
-    public class Track<T>
+    public sealed class Track<T>
     {
         /// <summary>
         /// The object being tracked

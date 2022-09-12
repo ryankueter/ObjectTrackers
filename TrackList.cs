@@ -14,7 +14,7 @@ namespace ObjectTrackers
     /// A class for tracking lists of items
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class TrackList<T>
+    public sealed class TrackList<T>
     {
         /// <summary>
         /// A final list of any changes made to objects in the lists.
