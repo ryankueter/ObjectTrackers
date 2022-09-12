@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Reflection;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ObjectTrackers
 {
@@ -89,6 +90,14 @@ namespace ObjectTrackers
         private void GetInitialValues()
         {
             GetProperties(AllInitialValues);
+        }
+
+        public Task<bool> HasChangesAsync()
+        {
+            return Task.Run(() =>
+            {
+                return HasChanges();
+            });
         }
 
         /// <summary>

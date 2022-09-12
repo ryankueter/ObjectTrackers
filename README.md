@@ -12,7 +12,7 @@ Updated: September, 2022
 
 ## Why Client-Side Auditing is Better Engineering
 
-**Object Tackers** was originally written to provide functionality for client-side auditing scenarios. This works best in scenarios where you have data persistence in the client (e.g., a Blazor WASM or Maui). By moving the user auditing logic to the client, you can dramatically improve the readability and maintainability of your code while improving the response-time and performance of your backend services and DBMSs. Backend data structures are typically very different from those consumed by the client. Consequently, you capture a lot of useless and irrelevant data, and substantially add to processor consumption, especially if you are using interceptors or database triggers. If you are creating your own custom functions in the service or the DBMS, then you need to locate and track all of those functions, which can be difficult if they are in stored procedures. By moving all the user auditing to the client, you eliminate all of that excess confusion, excess data, and processor consumption, which improves the response time of the service or DBMS, and only captures the data your users care about in a format they understand.
+**Object Tackers** was originally written to provide functionality for client-side auditing scenarios. This works best with clients that can persist data (e.g., Blazor WASM, MAUI, WPF). By moving the user auditing logic to the client, you can dramatically improve the readability and maintainability of your code while improving the response-time and performance of your backend services and DBMSs. Backend data structures are typically very different from those consumed by the client. Consequently, you capture a lot of useless and irrelevant data, and substantially add to processor consumption, especially if you are using interceptors or database triggers. If you are creating your own custom functions in the service or the DBMS, then you need to locate and track all of those functions, which can be difficult if they are in stored procedures. By moving all the user auditing to the client, you eliminate all of that excess confusion, excess data, and processor consumption, which improves the response time of the service or DBMS, and only captures the data your users care about in a format they understand.
 
 In the following feature demonstration, notice how the HasChanges() method must be called to get the changes.
 
@@ -39,6 +39,19 @@ person.CreatedDate = DateTime.Now.AddDays(-1);
 // YOU MUST RUN HasChanges() to see if any changes were made
 // to the state of your objects. 
 if (trackedPerson.HasChanges())
+{
+    string beforeJson = trackedPerson.Before;
+    string afterJson = trackedPerson.After;
+
+    Console.WriteLine("Before Values:");
+    Console.WriteLine(beforeJson);
+    Console.WriteLine();
+    Console.WriteLine("After Values:");
+    Console.WriteLine(afterJson);
+}
+
+// You also have an async option
+if (await trackedPerson.HasChangesAsync())
 {
     string beforeJson = trackedPerson.Before;
     string afterJson = trackedPerson.After;
