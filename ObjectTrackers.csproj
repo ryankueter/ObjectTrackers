@@ -1,23 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net5.0;net6.0;net7.0</TargetFrameworks>
+		<TargetFrameworks>net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.21</Version>
 		<Authors>Ryan A. Kueter</Authors>
 		<Company>Ryan A. Kueter</Company>
+		<Copyright>Ryan A. Kueter</Copyright>
 		<Description>A free .NET library that provides a simple way to track changes made to an object, like a class or list of classes. It allows you to capture those changes as “before” and “after” json serialized dictionary arrays that contain the property names and their values for quickly and easily storing and retrieving your audit data.</Description>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageIcon>Icon.jpg</PackageIcon>
 		<PackageIconUrl />
 		<RepositoryUrl>https://github.com/ryankueter/ObjectTrackers</RepositoryUrl>
-		<PackageReleaseNotes>Added a .Net 7 target.</PackageReleaseNotes>
+		<PackageReleaseNotes>Added a .Net 8 target.</PackageReleaseNotes>
 		<PackageTags>C#;Track;Tracking;Changes;Auditing</PackageTags>
-		<AssemblyVersion>1.0.21</AssemblyVersion>
-		<FileVersion>1.0.21</FileVersion>
-		<Copyright>Ryan A. Kueter</Copyright>
+		<Version>1.0.22</Version>
+		<AssemblyVersion>1.0.22</AssemblyVersion>
+		<FileVersion>1.0.22</FileVersion>
 		<PackageProjectUrl>https://github.com/ryankueter/ObjectTrackers</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryType>Git</RepositoryType>
