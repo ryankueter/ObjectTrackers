@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>net5.0;net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -13,11 +13,11 @@
 		<PackageIcon>Icon.jpg</PackageIcon>
 		<PackageIconUrl />
 		<RepositoryUrl>https://github.com/ryankueter/ObjectTrackers</RepositoryUrl>
-		<PackageReleaseNotes>Added a .Net 8 target.</PackageReleaseNotes>
+		<PackageReleaseNotes>Added a .Net 9 target.</PackageReleaseNotes>
 		<PackageTags>C#;Track;Tracking;Changes;Auditing</PackageTags>
-		<Version>1.0.22</Version>
-		<AssemblyVersion>1.0.22</AssemblyVersion>
-		<FileVersion>1.0.22</FileVersion>
+		<Version>1.0.23</Version>
+		<AssemblyVersion>1.0.23</AssemblyVersion>
+		<FileVersion>1.0.23</FileVersion>
 		<PackageProjectUrl>https://github.com/ryankueter/ObjectTrackers</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryType>Git</RepositoryType>

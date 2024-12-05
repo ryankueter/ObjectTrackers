@@ -1,14 +1,14 @@
 # Object Trackers (.NET)
 
 Author: Ryan Kueter  
-Updated: November, 2023
+Updated: December, 2024
 
 ## About
 
 **Object Trackers** is a free .NET library, available from the [NuGet Package Manager](https://www.nuget.org/packages/ObjectTrackers), that provides a simple way to track changes made to an object, like a class or list of classes. It allows you to capture those changes as ***before*** and ***after*** json serialized dictionary arrays that contain the property names and their values for quickly and easily storing and retrieving your audit data.  
 
 ### Targets:
-- .NET 5, .NET 6, .NET 7, .NET 8
+- .NET 5 - .NET 9
 
 ## Why Client-Side Auditing is Better Engineering
 
